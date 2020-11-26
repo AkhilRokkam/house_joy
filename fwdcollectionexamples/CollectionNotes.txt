@@ -1,0 +1,182 @@
+
+  A collection is a framework which is used to store a group of objects and manipulate them.  
+Inserting, removing, searching,sorting etc. 
+
+  They can grow to any size unlike arrays.  The elements of the collection are stored as the 
+   type of Object class type.  Collections support methods for sorting of elements also. 
+We can sort the collection by using Collections class, Arrays class, Comparable interface, 
+Comparator interface (compare(), equals() methods).
+
+The classes that implement Collection interface store objects as elements but not primitive 
+types.  
+
+Methods of Collection interface, which is on top of collection
+Heirarchy
+
+add( E obj )  //to add object into the collection
+
+addAll( Collection C )  // to add all the objects of C collection
+                                    to the calling collection class object
+
+remove( Object obj )	
+
+removeAll( Collection C )  //to remove all the objects of C collection
+                                      from the calling collection class object
+
+contains( Object obj )  // to check whether the given object is
+                                     present in the collection or not	
+
+isEmpty()	     // it returns true if collection is empty or else false
+     
+
+size()   // to find out the number of objects in the collection
+
+
+Common Exceptions that raise in collections:
+
+UnSupportedOperationException
+
+ClassCastException
+
+NullPointerException
+
+IllegalArgumentException
+
+IllegalStateException
+
+
+
+The Collection interface contains the sub interfaces such as Set, List etc.  
+
+
+ List interface :-  It extends the Collection interface and may contain duplicate elements also. 
+                         (ArrayList and LinkedList classes implement this)
+                         
+                        While working with lists, the Iterator interface is used to traverse through the
+                        list.
+
+ Set interface :-  extends the Collection interface and doesn't allow duplicate elements. 
+                        (HashSet and TreeSet classes implement Set interface)
+
+ HashSet class :-  It doesn't allow duplicate values.
+                        There is no guarantee that the elements will be displayed in the inserted 
+                         order.
+
+ SortedSet interface:- extends Set interface and used to order the elements of a Set in 
+                                  ascending order.
+
+ Map interface:-  used to maintain the Key-value association of the objects in a collection. 
+                        The keys of the objects in a collection are unique. The following classes are 
+                         used to create Maps.  
+                        
+                        They consist of  get()  and  put()  methods  to  retrieve  and  assign key-value pairs.
+                        
+                        If we need to sort the elements of a Map, we can override the hashcode() and 
+                        equals() methods of Map interface.
+
+ Hashmap:-        this class implements the Map and generates an unsorted and unordered map.  
+                        It allows one null key and multiple null values.
+
+ LinkedHashMap:-  extends the HashMap class and maintains the insertion or access order in the map.
+
+ TreeMap:-  this class implements Map and used to store key/value pairs in a sorted order and allows
+                 rapid retrieval of objects.
+
+
+Legacy Classes and Interfaces:  
+       Initially java was not having Collections framework.  Some classes were updated to support the concept of Collection. These classes are referred to as Legacy classes.
+
+     Ex:  Vector,  Stack,  Hashtable, Properties(It is a subclass of Hashtable)
+
+
+
+Iterator is an interface that contain methods to retrieve the elements one by one from a collection 
+object. It has the following methods.
+
+boolean hasNext()
+     This method returns true if the iterator has more elements.
+
+element next()
+    This method returns the next element in the list.
+
+void remove()
+This method removes the last element from the collecton returned by the iterator.
+
+
+
+ListIterator is an interface that contain methods to retrieve the elements from a collection object, 
+both in forward and reverse directions. 
+
+It has the following methods,
+
+boolean hasNext()
+This method returns true if the ListIterator has more elements when traversing the list in the forward direction.
+
+boolean hasPrevious()
+This method returns true if the ListIterator has more elements when traversing the list in the reverse direction.
+
+element next()
+This method returns the next element in the list.
+
+element previous()
+This method returns the previous element in the list.
+
+void remove()
+This method removes the last element from the collecton returned by the iterator.
+
+
+
+
+WRAPPER CLASSES:
+
+    Collections cannot handle primitive data types like int,float,long,char and double.These datatypes
+may be converted into object types by using the wrapper classes contained in java.lang package.
+
+    SIMPLE TYPE     WRAPPER CLASS TYPE
+         
+         boolean         Boolean
+         char              Character
+         double           Double
+         float              Float
+         int                Integer
+         long              Long
+
+
+CONVERTING PRIMITIVE NUMBERS TO OBJECT NUMBERS using CONSTRUCTOR METHODS:
+
+  Integer iobj=new Integer(i);
+  Float fobj=new Float(f);
+  Double dobj=new Double(d);
+  Long lobj=new Long(l);
+  
+  
+CONVERTING OBJECT NUMBERS TO PRIMITIVE NUMBERS
+ USING typeValue() METHOD:
+
+  int i=iobj.intValue();
+  float f=fobj.floatValue();
+  long l=lobj.longValue();
+  double d=dobj.doubleValue();
+  
+  
+CONVERTING NUMBERS TO STRINGS USING toString() METHOD:
+
+  str=Integer.toString(i);
+  str=Float.toString(f);
+  str=Double.toString(d);
+  str=Long.toString(l);
+  
+  
+CONVERTING STRING OBJECTS TO NUMERIC OBJECTS USING THE STATIC METHOD valueOf();
+
+  dobj=Double.valueOf(str);
+  fobj=Float.valueOf(str);
+  iobj=Integer.valueOf(str);
+  longobj=Long.valueOf(str);
+  
+   
+CONVERTING NUMERIC STRINGS TO PRIMITIVE NUMBERS USING PARSING METHODS:
+
+  int i=Integer.parseInt(str);
+  float f=Float.parseFloat(str);
+  long l=Long.parseLong(str); 
